@@ -1,0 +1,12 @@
+# GaelHub.lua
+local g=Instance.new("ScreenGui",game.CoreGui)local t=Instance.new("TextLabel",g)
+t.Size=UDim2.new(.3,0,.1,0)t.Position=UDim2.new(.35,0,.45,0)t.Text="OPTIMIZADOR POTENTE"
+t.TextColor3=Color3.new(1,1,1)t.BackgroundTransparency=1 t.TextScaled=true
+t.TextTransparency=1 for i=1,0,-.1 do t.TextTransparency=i task.wait() end
+task.wait(2)for i=0,1,.1 do t.TextTransparency=i task.wait() end g:Destroy()
+
+game.Lighting.GlobalShadows=false
+for _,v in pairs(game:GetDescendants()) do
+ if v:IsA("PostEffect")or v:IsA("ParticleEmitter")or v:IsA("Trail")then v.Enabled=false end
+ if v:IsA("BasePart")then v.Material=Enum.Material.Plastic end
+end
